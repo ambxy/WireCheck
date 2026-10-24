@@ -16,8 +16,8 @@ Small businesses pay unfamiliar overseas suppliers by wire with almost no verifi
 **Wire Check** is an autonomous multi-agent advisory system running inside **ASI:One** via **Interactive Cards**. Before any wire is initiated, specialist parallel agents verify the legal entity, screen sanctions lists, and analyze payment fraud signals. A fast decision model (**Jev / TypeSafe System One**) alongside deterministic safety rules judges the risk and returns **PROCEED / CALL-BACK / HOLD**, generating an out-of-band call-back verification script. **It never moves money.**
 
 ### Agent Chat Protocol (ACP) & ASI:One Discoverability
-- **ACP Implemented**: Built using `uagents` message models (`WireCheckQuery` and `WireCheckResponse`) in `wire_check/agents/orchestrator.py`.
-- **ASI:One Routing**: Registered on Agentverse with handle `@wire-check` and configured with description keywords (`research`, `support`, `automation`, `fraud detection`, `compliance`) so the ASI:One LLM automatically routes supplier wire verification prompts to Wire Check.
+- **ACP Implemented**: Built using `uagents` message models (`WireCheckQuery` and `WireCheckResponse`) in `wire_check/agents/orchestrator.py` alongside official `ChatProtocol`.
+- **ASI:One Routing**: Registered on Agentverse with handle `@wire-check_orchestrator` and configured with description keywords (`research`, `support`, `automation`, `fraud detection`, `compliance`) so the ASI:One LLM automatically routes supplier wire verification prompts to Wire Check.
 
 ---
 
@@ -117,7 +117,7 @@ cp .env.example .env
 ### Installation
 ```bash
 pip install -r requirements.txt
-pip install uagents
+pip install uagents litellm
 ```
 
 ### Running Local Tests
